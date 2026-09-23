@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SISTEMA DE CONTENCIÓN</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- efectos ambiente -->
+  <div class="crt-overlay"></div>
+  <div class="vignette"></div>
+  <div class="noise-burst" id="noise-burst"></div>
+  <div class="hazard-strip top"></div>
+  <div class="hazard-strip bottom"></div>
+
+  <!-- PANTALLA 1: PIN -->
+  <section id="pin-screen" class="screen active">
+    <div class="pin-card">
+      <div class="card-header">
+        <span class="dot" id="status-dot"></span>
+        <span class="header-label">NODO-07 // CONTENCIÓN</span>
+      </div>
+
+      <h1 class="glitch" data-text="ACCESO RESTRINGIDO">ACCESO RESTRINGIDO</h1>
+      <p class="subtitle">Introduzca la clave de anulación del protocolo</p>
+
+      <div class="pin-boxes">
+        <input type="text" inputmode="numeric" maxlength="1" class="pin-digit" data-index="0" autocomplete="off">
+        <input type="text" inputmode="numeric" maxlength="1" class="pin-digit" data-index="1" autocomplete="off">
+        <input type="text" inputmode="numeric" maxlength="1" class="pin-digit" data-index="2" autocomplete="off">
+        <input type="text" inputmode="numeric" maxlength="1" class="pin-digit" data-index="3" autocomplete="off">
+      </div>
+
+      <p id="pin-error" class="pin-error">⚠ ACCESO DENEGADO — INTENTO REGISTRADO</p>
+      <p id="pin-success" class="pin-success">✔ CLAVE VÁLIDA — DESACTIVANDO BLOQUEO…</p>
+
+      <div class="card-footer">
+        <span id="attempts-label">INTENTOS REGISTRADOS: 0</span>
+        <span class="blink-caret">_</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANTALLA 2: VIDEO -->
+  <section id="video-screen" class="screen">
+    <div class="video-wrapper">
+      <div class="feed-header">
+        <span class="rec-dot"></span>
+        <span>REC</span>
+        <span class="feed-title">EVIDENCIA_04 — NO DIFUNDIR</span>
+        <span class="feed-time" id="feed-timestamp">T+00:00:00</span>
+      </div>
+
+      <div class="video-stage">
+        <video id="player" src="video/video.mp4" playsinline></video>
+      </div>
+
+      <div class="controls">
+        <div class="progress-bar" id="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+
+        <div class="buttons-row">
+          <button id="btn-start" title="Ir al inicio">⏮</button>
+          <button id="btn-reverse" title="Reproducir en reversa">◀◀</button>
+          <button id="btn-play" title="Reproducir / Pausar">▶</button>
+          <button id="btn-end" title="Ir al final">⏭</button>
+        </div>
+        <div class="time-row">
+          <span id="time-display">00:00 / 00:00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script src="script.js"></script>
+</body>
+</html>
